@@ -219,7 +219,8 @@ export default Component.extend({
 
   _commitSelection: function() {
     const model = this.get('selection');
-    if (this.get('allowFreeInput')) {
+    console.log('model', model);
+    if (this.get('allowFreeInput') && !model) {
       const value = this.get('_typeahead').typeahead('val');
       this.set('selection', value);
       this.sendAction('action', value);
